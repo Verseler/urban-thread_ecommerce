@@ -12,7 +12,109 @@ $black: rgb(1,1,1);
 $carousel-bg: rgb(236, 235, 195);
 $red: rgb(228, 8, 8);
 
+
 /* styles */
+/* nav */
+.nav {
+    height: 70px;
+    width: 100%;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo-wrapper {
+        font-size: 1.5rem;
+        width: 10em;
+        font-weight: 700;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &_logo-name {
+            color: $main-color;
+            text-decoration: none;
+        }
+    }
+
+    &__btn-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &_btn {
+            color: $black;
+            margin-left: 30px;
+            height: 25px;
+            width: 25px;
+            cursor: pointer;
+            position: relative;
+
+            &_icon {
+                height: 100%;
+                width: 100%;
+                transition: filter 300ms ease-out;
+
+                &:hover {
+                    filter: invert(22%) sepia(18%) saturate(6486%) hue-rotate(168deg) brightness(93%) contrast(99%);
+                }
+            }
+
+            &--account:hover &_mini-menu {
+                display: block;
+            }
+
+            &_mini-menu {
+                position: absolute;
+                right: 0;
+                top: 25px;
+                display: none;
+                background-color: $white;
+                width: 150px;
+                padding: 10px 10px 5px;
+                box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+                li {
+                    list-style-type: none;
+                    margin-bottom: 5px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        filter: invert(22%) sepia(18%) saturate(6486%) hue-rotate(168deg) brightness(93%) contrast(99%);
+                    }
+                }
+
+                &_icon {
+                    height: 65%;
+                    object-fit: contain;
+                    margin-right: 5px;
+
+                }
+
+                &_option {
+                    font-size: 1rem;
+                    color: $black;
+                    text-decoration: none;
+                    transition: color 150ms ease-out;
+                }
+
+                &--logout-option {
+                    filter: invert(14%) sepia(81%) saturate(5771%) hue-rotate(8deg) brightness(89%) contrast(116%);
+                }
+            }
+        }
+    }
+}
+
+
+
 /* carousel */
 .carousel {
     padding-top: 70px;
@@ -77,13 +179,12 @@ $red: rgb(228, 8, 8);
                 padding: 0.5em 1em;
                 margin-top: 20px;
                 border-radius: 2px;
-                box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+                box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
                 cursor: pointer;
 
                 &:hover {
                     opacity: 0.85;
                     transition: opacity 150ms ease-in-out 0s;
-                    
                 }
             }
         }
