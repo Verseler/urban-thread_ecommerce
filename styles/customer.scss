@@ -12,16 +12,16 @@ $black: rgb(1,1,1);
 $carousel-bg: rgb(236, 235, 195);
 $red: rgb(228, 8, 8);
 
-
 /* styles */
 /* nav */
 .nav {
     height: 70px;
     width: 100%;
     padding: 0 30px;
+    background-color: $white;
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,7 +115,7 @@ $red: rgb(228, 8, 8);
 
 
 
-/* carousel */
+/* home carousel */
 .carousel {
     padding-top: 70px;
     width: 100%;
@@ -194,23 +194,33 @@ $red: rgb(228, 8, 8);
         position: absolute;
         top: 55%;
         transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+        padding: 5px 0;
+        border-radius: 50%;
         background: transparent;
         color: $black;
-        font-size: 1.6rem;
         border: none;
         cursor: pointer;
+        background-color: rgba(255,255,255, 0.5);
+
+        &_icon {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
         
         &:hover {
-            opacity: 0.7;
+            background-color: rgba(255,255,255, 1);
             transition: opacity 0.3s ease-in;
         }
         &--next {
             right: 10px;
+            padding-left: 2px;
         }
         &--prev {
             left: 10px;
+            padding-right: 2px;
         }
     }
   }
@@ -227,3 +237,67 @@ $red: rgb(228, 8, 8);
       opacity: 1;
     }
   }
+
+
+/* home category */
+.category {
+    margin-inline: 50px;
+
+    &__header {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &_name {
+            font-size: 1.5rem;
+        }
+
+        &_view-all-btn {
+            font-size: 0.9rem;
+            font-weight: 700;
+            position: absolute;
+            right: 20px;
+            border-bottom: 1px solid $black;
+            text-decoration: none;
+            color: $black;
+            cursor: pointer;
+        }
+    }
+
+    &__list {
+        display: grid;
+        height: 200px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 2rem 1rem;
+        overflow: hidden;
+
+        &_card {
+            background-color: $lighter-gray;
+            height: 80px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &_img-wrapper {
+                height: 80px;
+                width: 80px;
+
+                &_img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 5px 0 0 5px;
+                }
+            }
+
+            &_name {
+                flex: 1;
+                padding-left: 15px;
+            }
+        }
+    }
+}
